@@ -1,0 +1,9 @@
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+DisplayAs = "0b91fe84-8a4c-11e9-3e1d-67c38462b6d6"
+Literate = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+ThreadsAPIBenchmarks = "f3cd3bc0-3aa3-43bd-84e9-4d12433f05d7"
+ThreadsAPIBenchmarksAnalyzers = "12f58371-f6d6-4ace-9736-b9d3412995a9"

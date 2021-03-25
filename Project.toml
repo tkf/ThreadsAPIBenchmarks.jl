@@ -3,6 +3,10 @@ uuid = "f3cd3bc0-3aa3-43bd-84e9-4d12433f05d7"
 authors = ["Takafumi Arakaki <aka.tkf@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+
 [compat]
 julia = "1"
 
