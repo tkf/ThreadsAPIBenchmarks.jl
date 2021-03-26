@@ -1,5 +1,8 @@
 # # Measuring overheads of some threading API
 
+# You can find the code for benchmarking and plotting at
+# <https://github.com/tkf/ThreadsAPIBenchmarks.jl>.
+
 using DisplayAs
 using ThreadsAPIBenchmarksAnalyzers: TaskOverheads, NotifyOverheads
 
@@ -18,12 +21,12 @@ let n = 0
 end
 
 # ThreadsAPIBenchmarks.jl contains a benchmark for measuring the overheads of
-# `@sync` and `@spawn`. That is to say, it measures sync overhead `t1 - t0` and
-# `t2 - t1` of
+# `@sync` and `@spawn`. That is to say, it measures `@spawn` overhead `t1 - t0`
+# and `wait` (sync) overhead `t2 - t1` of
 #
 # ```julia
 # t0 = time_ns()
-# @sync @spawn t1 = time_ns()
+# wait(@spawn t1 = time_ns())
 # t2 = time_ns()
 # ```
 #

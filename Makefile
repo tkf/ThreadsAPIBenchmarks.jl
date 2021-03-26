@@ -18,7 +18,7 @@ notes: notes.pdf
 notes.pdf: notes.ipynb
 	jupyter nbconvert --to=pdf $<
 
-notes.ipynb:
+notes.ipynb: notes/notes.jl
 	$(JULIA) -e 'using Literate; Literate.notebook("notes/notes.jl")'
 
 data/done/instantiate: $(JULIA_PROJECT)/Manifest.toml

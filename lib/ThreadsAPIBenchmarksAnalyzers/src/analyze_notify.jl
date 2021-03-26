@@ -58,7 +58,7 @@ function plot_hists(rawdf::AbstractDataFrame)
     return plot(
         plot!(plt_max, ylabel = "max"),
         plot!(plt_min, ylabel = "min"),
-        plot!(plt_notify, ylabel = "notify", xlabel = "overhead [ns]"),
+        plot!(plt_notify, ylabel = "notify", xlabel = "overhead [ns] (log scale)"),
         yticks = nothing,
         layout = (3, 1),
         # layout = (2, 1),
