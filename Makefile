@@ -26,16 +26,16 @@ $(notes_files): data/$(DATA_TAG)/%: %
 notes.pdf: notes.ipynb
 	jupyter nbconvert --to=pdf $<
 
-notes.ipynb: notes/notes.jl
+notes.ipynb: notes/notes.jl data/done/$(DATA_TAG)/benchmark
 	$(JULIA) -e 'using Literate; Literate.notebook("notes/notes.jl")'
 
-data/done/instantiate: $(JULIA_PROJECT)/Manifest.toml
+data/done/$(DATA_TAG)/instantiate: $(JULIA_PROJECT)/Manifest.toml
 	@mkdir -pv $$(dirname $@)
 	$(JULIA_CMD) -e 'using Pkg; Pkg.instantiate()'
 	touch $@
 
-benchmark: data/done/benchmark
-data/done/benchmark: data/done/instantiate
+benchmark: data/done/$(DATA_TAG)/benchmark
+data/done/$(DATA_TAG)/benchmark: data/done/$(DATA_TAG)/instantiate
 	@mkdir -pv $$(dirname $@)
 	$(JULIA_CMD) -e 'using ThreadsAPIBenchmarks; run_benchmarks()'
 	touch $@
