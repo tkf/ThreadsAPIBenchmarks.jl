@@ -2,7 +2,6 @@
 
 JULIA = julia
 JULIA_CMD = $(JULIA) --startup-file=no
-JULIA_PLOT = $(JULIA_CMD) --project=plots
 
 JULIA_PROJECT ?= $(PWD)/environments/v1.6
 export JULIA_PROJECT
