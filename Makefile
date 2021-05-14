@@ -12,7 +12,16 @@ export JULIA_PKG_PRECOMPILE_AUTO
 GKSwstype ?= nul
 export GKSwstype
 
-notes: notes.pdf
+DATA_TAG = $(shell $(JULIA_CMD) --compile=min -e 'print(VERSION)')
+
+notes_files = \
+data/$(DATA_TAG)/notes.ipynb \
+data/$(DATA_TAG)/notes.pdf
+
+notes: $(notes_files)
+
+$(notes_files): data/$(DATA_TAG)/%: %
+	cp --no-target-directory $< $@
 
 notes.pdf: notes.ipynb
 	jupyter nbconvert --to=pdf $<
